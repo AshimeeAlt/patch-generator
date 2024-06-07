@@ -217,6 +217,18 @@
     // Check if we are enabled and if we are show otherwise hide
     sel('block/duplicateOnDrag/container').style.display = this.checked ? 'initial' : 'none';
   };
+  // This is for the fancy double auto shit
+  sel('block/inline').onchange = function() {
+    const outputShape = sel('block/outputShape');
+    outputShape.parentElement.classList.toggle('disabled-label');
+    if (outputShape.parentElement.classList.contains('disabled-label')) {
+      if (!outputShape.checked) outputShape.click();
+      outputShape.disabled = true;
+    } else {
+      outputShape.disabled = false;
+      setTimeout(() => outputShape.click(), 5);
+    }
+  }
 
   /**!
    * Generate the options for {generatePatches} based on checkboxes in the document

@@ -81,6 +81,10 @@ html, body {
   margin-bottom: 2px;
   display: inline-block;
 }
+.disabled-label {
+  opacity: 0.5;
+  color: white;
+}
 input[data-for="extId"] {
   width: 80px;
   font-size: xx-small;
