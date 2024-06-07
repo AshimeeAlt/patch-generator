@@ -54,7 +54,7 @@
     </div>
     <!-- Output container -->
     <div id="output_container">
-      <button onclick="gen()" class="generator-button">Generate JS!</button>
+      <button onclick="Generator.gen();" class="generator-button">Generate JS!</button>
       <hr />
       <span class="generator-output-text">Output: <br /></span>
       <textarea data-for="gen/output" readonly></textarea>
@@ -65,17 +65,22 @@
     <!-- Footer -->
     <div id="footer">
       <hr />
-      <p class="liability-notice">
-        "Patch Generator" is not affiliated with TurboWarp, Scratch, the Scratch Team, or the Scratch Foundation.<br /><br />
-        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,<br />
-        INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A<br />
-        PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT<br />
-        HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION<br />
-        OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE<br />
-        SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.<br />
-      </p>
+      <div id="legal-shit">
+        <span data-for="legalShit/dropdownButton" data-active="0">&gt; Legal.</span>
+        <p class="liability-notice" style="display: none;" class="sub">
+          "Patch Generator" is not affiliated with TurboWarp, Scratch, the Scratch Team, or the Scratch Foundation.<br />
+          <br />
+          THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,<br />
+          INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A<br />
+          PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT<br />
+          HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION<br />
+          OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE<br />
+          SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.<br />
+        </p>
+      </div>
     </div>
     <!-- Scripts -->
     <script defer src="./include/script.js"></script>
+    <script defer src="./include/legal.js"></script>
   </body>
 </html>
