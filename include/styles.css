@@ -1,0 +1,9 @@
+/* Subblock for embedded options (see "Duplicate shadow on drag []") */
+.bump,.sub {
+  margin-left: 17px;
+}
+.sub {
+  padding: 3px;
+  border: 2px dashed black;
+  width: fit-content;
+}
