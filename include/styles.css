@@ -82,6 +82,9 @@ input[data-for="extId"] {
   font-weight: 300;
 }
 
+span[data-for="legalStuff/dropdownButton"] {
+  cursor: pointer;
+}
 .credits {
   position: fixed;
   width: fit-content;
