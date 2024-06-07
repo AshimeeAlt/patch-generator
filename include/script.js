@@ -300,9 +300,14 @@
     output.value = js;
   }
 
-  // Dont leak the main gen function but a wrapper version
-  global.gen = function() {
-    // Ik your reading this so hah!
-    gen();
-  };
+  // Share some stuff
+  global.Generator = {
+    gen: function() {
+      // Ik your reading this so hah!
+      gen();
+    },
+    sel: function(for_) {
+      return sel(for_);
+    }
+  }
 }).bind({}, globalThis)();
