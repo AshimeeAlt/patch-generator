@@ -1,9 +1,61 @@
-/* Subblock for embedded options (see "Duplicate shadow on drag []") */
-.bump,.sub {
+:root {
+  --tw-red-1: rgb(255, 76, 76);
+  --tw-grey-1: #1e1e1e;
+  --text-color: whitesmoke;
+}
+
+.small-text {
+  font-size: small;
+}
+html, body {
+  background: var(--tw-grey-1);
+  color: var(--text-color);
+  font-family: sans-serif;
+}
+
+.bump, .sub {
   margin-left: 17px;
 }
 .sub {
+  margin-top: 2.5px;
   padding: 3px;
-  border: 2px dashed black;
+  border: 2px dashed var(--text-color);
   width: fit-content;
+}
+
+#header {
+  padding: 1px;
+  width: fit-content;
+  background: var(--tw-red-1);
+  padding-inline: 2.5px;
+  display: inline-block;
+}
+#header span {
+  font-size: large;
+  font-weight: bold;
+}
+
+#options {
+  display: flexbox;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+label {
+  margin-bottom: 2px;
+}
+input[data-for="extId"] {
+  width: 80px;
+  font-size: xx-small;
+}
+.generator-output-text {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.credits {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 32767;
+  opacity: 0.45;
 }

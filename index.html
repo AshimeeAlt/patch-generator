@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="small-text">
   <head>
     <!-- Display data -->
     <meta charset="UTF-8">
@@ -13,11 +13,14 @@
     <!-- Styles -->
     <link rel="stylesheet" href="./include/styles.css" />
   </head>
-  <body>
-    <h3>Patch Generator :3</h3>
+  <body class="small-text">
+    <!-- Header -->
+    <div id="header">
+      <span>Patch Generator :3</span>
+    </div>
+    <!-- ALL the options -->
     <div id="options">
-      <!-- ALL the options -->
-      <label>Extension ID: <input data-for="extId" type="text" /></label><br />
+      <label>Extension ID: <input data-for="extId" type="text" width="15" /></label><br />
       <br />
       <label><input data-for="block/inline" type="checkbox" /> BlockType.INLINE?</label><br />
       <label><input data-for="add/blockShape" type="checkbox" /> Scratch.BlockShape?</label><br />
@@ -48,14 +51,17 @@
     </div>
     <!-- Output container -->
     <div id="output_container">
-      <button onclick="gen()">Generate JS!</button>
+      <button onclick="gen()" class="generator-button">Generate JS!</button>
       <hr />
-      <span>Output: <br /></span>
-      <textarea data-for="gen/output"></textarea>
+      <span class="generator-output-text">Output: <br /></span>
+      <textarea data-for="gen/output" readonly></textarea>
       <br />
       <!-- Hidden until I can find a working api -->
       <label hidden><input data-for="gen/minify" type="checkbox" /> Minify JS?</label><br hidden />
     </div>
+    <!-- Footer -->
+    <div id="footer"><!-- Unused rn --></div>
+    <span class="credits">Made by <a href="https://github.com/AshimeeAlt">Ashimee</a>.</span>
     <!-- Scripts -->
     <script defer src="./include/script.js"></script>
   </body>
