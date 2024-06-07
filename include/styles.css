@@ -1,6 +1,12 @@
 :root {
-  --tw-red-1: rgb(255, 76, 76);
+  --tw-red-1: #ff4c4c;
+  --tw-red-1_d9: #ff4c4cd9;
+  --tw-red-1_6b: #ff4c4c6b;
+  --tw-red-2: #ed3636;
+  --tw-red-3: #ff4c4c;
+  --tw-red-1_e6: #ff4c4ce6;
   --tw-grey-1: #1e1e1e;
+  --tw-grey-2: #3e3e3e;
   --scrollbar-grey: #454545;
   --text-color: whitesmoke;
 }
@@ -59,6 +65,7 @@ html, body {
   background: var(--tw-red-1);
   padding-inline: 2.5px;
   display: inline-block;
+  border: solid 2px var(--tw-red-2);
 }
 #header span {
   font-size: large;
@@ -70,19 +77,62 @@ html, body {
   margin-top: 5px;
   margin-bottom: 5px;
 }
-label {
+.label {
   margin-bottom: 2px;
+  display: inline-block;
 }
 input[data-for="extId"] {
   width: 80px;
   font-size: xx-small;
 }
+
+.checkbox {
+  line-height: normal;
+  vertical-align: bottom;
+}
+/* TurboWarp for this */
+.checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  transition: 200ms;
+  background-color: #111111;
+  transition-property: background-color border;
+  border: solid 1px #ffffff24;
+  border-radius: 2px;
+  box-sizing: border-box;
+  padding: 0px;
+  background-size: 100%;
+  outline: none;
+}
+.checkbox:hover, .checkbox:active, .checkbox:checked {
+  border-color: var(--tw-red-1);
+}
+.checkbox:checked {
+  background-color: var(--tw-red-1);
+  box-shadow: 0 0 0 3px var(--tw-red-1_6b);
+  background-image: url(data:image/svg+xml;base64,PCEtLSBodHRwczovL2FrYXJpY29ucy5jb20vIC0tPgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIGFyaWEtaGlkZGVuPSJ0cnVlIiBmb2N1c2FibGU9ImZhbHNlIiB3aWR0aD0iMWVtIiBoZWlnaHQ9IjFlbSIgc3R5bGU9Ii1tcy10cmFuc2Zvcm06IHJvdGF0ZSgzNjBkZWcpOyAtd2Via2l0LXRyYW5zZm9ybTogcm90YXRlKDM2MGRlZyk7IHRyYW5zZm9ybTogcm90YXRlKDM2MGRlZyk7IiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCBtZWV0IiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxnIGZpbGw9Im5vbmUiPjxwYXRoIGQ9Ik00IDEybDYgNkwyMCA2IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvZz48L3N2Zz4=)
+}
+
 .generator-output-text {
   font-size: 14px;
   font-weight: 300;
 }
 textarea[data-for="gen/output"] {
   font-size: xx-small;
+}
+.generator-button {
+  font-size: smaller;
+  color: whitesmoke;
+  font-weight: bold;
+  background: var(--tw-red-1);
+  border: solid 2px var(--tw-red-2);
+  border-radius: 5px;
+}
+.generator-button:active {
+  background: var(--tw-red-1_5);
 }
 
 span[data-for="legalStuff/dropdownButton"] {

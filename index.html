@@ -23,31 +23,31 @@
     </div>
     <!-- ALL the options -->
     <div id="options">
-      <label>Extension ID: <input data-for="extId" type="text" width="15" /></label><br />
+      <span class="label">Extension ID: <input data-for="extId" type="text" width="15" /></span><br />
       <br />
-      <label><input data-for="block/inline" type="checkbox" /> BlockType.INLINE?</label><br />
-      <label><input data-for="add/blockShape" type="checkbox" /> Scratch.BlockShape?</label><br />
+      <span class="label"><input data-for="block/inline" type="checkbox" class="checkbox" /> BlockType.INLINE?</span><br />
+      <span class="label"><input data-for="add/blockShape" type="checkbox" class="checkbox" /> Scratch.BlockShape?</span><br />
       <br />
-      <label><input data-for="block/outputShape" type="checkbox" /> Block.outputShape?</label><br />
-      <label><input data-for="block/output" type="checkbox" /> Block.output?</label><br />
-      <label><input data-for="menu/outputShape" type="checkbox" /> Menu.outputShape?</label><br />
-      <label><input data-for="menu/output" type="checkbox" /> Menu.output?</label><br />
+      <span class="label"><input data-for="block/outputShape" type="checkbox" class="checkbox" /> Block.outputShape?</span><br />
+      <span class="label"><input data-for="block/output" type="checkbox" class="checkbox" /> Block.output?</span><br />
+      <span class="label"><input data-for="menu/outputShape" type="checkbox" class="checkbox" /> Menu.outputShape?</span><br />
+      <span class="label"><input data-for="menu/output" type="checkbox" class="checkbox" /> Menu.output?</span><br />
       <br />
-      <label><input data-for="arg/wxhInlineImage" type="checkbox" /> Argument.InlineImage.WIDTH&HEIGHT?</label><br />
-      <label><input data-for="arg/shadowArgs" type="checkbox" /> Argument.shadow?</label><br />
+      <span class="label"><input data-for="arg/wxhInlineImage" type="checkbox" class="checkbox" /> Argument.InlineImage.WIDTH&HEIGHT?</span><br />
+      <span class="label"><input data-for="arg/shadowArgs" type="checkbox" class="checkbox" /> Argument.shadow?</span><br />
       <br />
-      <label><input data-for="block/terminalHats" type="checkbox" /> Allow isTerminal hats</label><br />
+      <span class="label"><input data-for="block/terminalHats" type="checkbox" class="checkbox" /> Allow isTerminal hats</span><br />
       <br />
-      <label><input data-for="add/patchFns" type="checkbox" /> Add Patch FN's</label><br />
-      <label><input data-for="add/tooltipAPI" type="checkbox" /> Add Tooltip API?</label><br />
-      <label><input data-for="add/fieldSupport" type="checkbox" /> Add Custom Field Support</label><br />
+      <span class="label"><input data-for="add/patchFns" type="checkbox" class="checkbox" /> Add Patch FN's</span><br />
+      <span class="label"><input data-for="add/tooltipAPI" type="checkbox" class="checkbox" /> Add Tooltip API?</span><br />
+      <span class="label"><input data-for="add/fieldSupport" type="checkbox" class="checkbox" /> Add Custom Field Support</span><br />
       <br />
-      <label><input data-for="block/duplicateOnDrag" type="checkbox" /> Duplicate shadow on drag []</label><br />
+      <span class="label"><input data-for="block/duplicateOnDrag" type="checkbox" class="checkbox" /> Duplicate shadow on drag []</span><br />
       <div data-for="block/duplicateOnDrag/container" style="display: none;">
         <div class="sub">
           <span>Seperate the opcodes with commas.</span><br />
           <textarea data-for="block/duplicateOnDrag/blocks"></textarea><br />
-          <label><input data-for="block/duplicateOnDrag/fullOpcodes" type="checkbox" /> Full opcodes?</label>
+          <span class="label"><input data-for="block/duplicateOnDrag/fullOpcodes" type="checkbox" class="checkbox" /> Full opcodes?</span>
         </div>
         <br />
       </div>
@@ -60,7 +60,7 @@
       <textarea data-for="gen/output" readonly></textarea>
       <br />
       <!-- Hidden until I can find a working api -->
-      <label hidden><input data-for="gen/minify" type="checkbox" /> Minify JS?</label><br hidden />
+      <span class="label" hidden><input data-for="gen/minify" type="checkbox" class="checkbox" /> Minify JS?</span><br hidden />
     </div>
     <!-- Footer -->
     <div id="footer">

@@ -300,6 +300,14 @@
     output.value = js;
   }
 
+  // For the checkboxes
+  document.body.addEventListener('click', (ev) => {
+    const target = ev.target;
+    if (target.nodeName === 'SPAN' && target.classList.contains('label')) {
+      target.querySelector('input[type="checkbox"]').click();
+    }
+  });
+
   // Share some stuff
   global.Generator = {
     gen: function() {
