@@ -304,7 +304,8 @@
   document.body.addEventListener('click', (ev) => {
     const target = ev.target;
     if (target.nodeName === 'SPAN' && target.classList.contains('label')) {
-      target.querySelector('input[type="checkbox"]').click();
+      const checkbox = target.querySelector('input[type="checkbox"]');
+      checkbox.click();
     }
   });
 
