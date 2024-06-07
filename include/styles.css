@@ -1,16 +1,46 @@
 :root {
   --tw-red-1: rgb(255, 76, 76);
   --tw-grey-1: #1e1e1e;
+  --scrollbar-grey: #454545;
   --text-color: whitesmoke;
 }
 
 .small-text {
   font-size: small;
 }
+.no-pad, .credits {
+  padding: 0px;
+  margin: 0px;
+}
 html, body {
   background: var(--tw-grey-1);
   color: var(--text-color);
   font-family: sans-serif;
+}
+
+*::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 20px;
+  background-color: var(--tw-grey-1);
+}
+*::-webkit-scrollbar-track:hover {
+  background-color: var(--tw-grey-1);
+}
+*::-webkit-scrollbar-track:active {
+  background-color: var(--tw-grey-1);
+}
+*::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: var(--scrollbar-grey);
+}
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-grey);
+}
+*::-webkit-scrollbar-thumb:active {
+  background-color: var(--scrollbar-grey);
 }
 
 .bump, .sub {
@@ -53,9 +83,11 @@ input[data-for="extId"] {
 }
 
 .credits {
-  position: sticky;
-  right: 10px;
-  bottom: 10px;
+  position: fixed;
+  width: fit-content;
+  right: 0;
+  display: block;
   z-index: 32767;
   opacity: 0.45;
+  padding-right: 5px;
 }
