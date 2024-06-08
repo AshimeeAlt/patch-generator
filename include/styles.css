@@ -129,7 +129,7 @@ textarea[data-for="gen/output"] {
 }
 .generator-button {
   font-size: smaller;
-  color: whitesmoke;
+  color: var(--text-color);
   font-weight: bold;
   background: var(--tw-red-1);
   border: solid 2px var(--tw-red-2);
@@ -145,6 +145,15 @@ textarea[data-for="gen/output"] {
 
 x-dropdown-span {
   cursor: pointer;
+}
+x-dropdown-span svg {
+  vertical-align: bottom;
+  rotate: 90deg;
+  transition: 200ms;
+  transition-property: rotate;
+}
+x-dropdown-span[data-open="open"] svg {
+  rotate: 180deg;
 }
 *[data-dropdown]:not(x-dropdown-span)[data-open="open"] {
   display: inherit;
@@ -162,3 +171,21 @@ x-dropdown-span {
   opacity: 0.45;
   padding-right: 5px;
 }
+
+/* Borrowed from bootstrap */
+.bi::before,
+[class^="bi-"]::before,
+[class*=" bi-"]::before {
+  display: inline-block;
+  font-family: bootstrap-icons !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: -.125em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.bi-arrow-up-short::before { content: "\f145"; }
+/* End borrow */
