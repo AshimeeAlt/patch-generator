@@ -2,6 +2,12 @@
  * The main code
  * @argument {globalThis} global The global scope
  * @returns {undefined}
+ * @file
+ * @fileoverview All of the code
+ * @author Ashimee https://github.com/Ashimee/
+ * @version 1.0
+ * @copyright MIT & LGPLv3 License
+ * Do not remove this comment
  */
 (function(global) {
   // We use an IIFE to prevent leaking stuff to global scope
@@ -22,6 +28,7 @@
    */
   function generatePatchs(opts) {
     // Some default JS
+    let PATCH_LICENSE = 'MIT';
     let js = `const patcher=((function(Scratch){const extId="${sanitize(opts.extId)}",PATCHES_ID=\`__\${extId}_patches__\`,vm=Scratch.vm,runtime=vm.runtime;let exports;`;
     /* Setup */
     /**!
@@ -202,6 +209,7 @@
     js += patch._use('exports');
     // Some more default JS
     js += 'return exports;})(Scratch));';
+    js = `/**! THIS PATCH IS LICENSED UNDER ${PATCH_LICENSE} LICENSE **/${js}`;
     return js;
   }
 
@@ -428,6 +436,9 @@
     sel: function(for_) {
       return sel(for_);
     },
+    /**!
+     * @returns {$js_beautify}
+     */
     get js_beautify() {
       return $js_beautify;
     },
