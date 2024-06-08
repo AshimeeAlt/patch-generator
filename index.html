@@ -30,9 +30,10 @@
         <textarea data-for="gen/output" readonly></textarea>
         <br />
         <div data-for="gen/output/extras">
-          <x-dropdown-span data-dropdown="gen/output/extras/container">Output Options.</x-dropdown-span>
+          <x-dropdown-span data-dropdown="gen/output/extras/container">Output Options</x-dropdown-span>
           <div data-dropdown="gen/output/extras/container" class="sub">
             <!-- Disabled until I can find a working api -->
+            <span class="label"><input data-for="gen/prittify" type="checkbox" class="checkbox" /> Prettify JS?</span><br />
             <span class="label disabled-label"><input data-for="gen/minify" type="checkbox" class="checkbox" disabled /> Minify JS?</span><br />
           </div>
         </div>
@@ -41,21 +42,21 @@
       <div id="options">
         <span class="label">Extension ID: <input data-for="extId" type="text" width="15" /></span><br />
         <br />
-        <span class="label"><input data-for="block/inline" type="checkbox" class="checkbox" /> BlockType.INLINE?</span><br />
-        <span class="label"><input data-for="add/blockShape" type="checkbox" class="checkbox" /> Scratch.BlockShape?</span><br />
+        <span class="label"><input data-for="block/inline" type="checkbox" class="checkbox" /> BlockType.INLINE</span><br />
+        <span class="label"><input data-for="add/blockShape" type="checkbox" class="checkbox" /> Scratch.BlockShape</span><br />
         <br />
-        <span class="label"><input data-for="block/outputShape" type="checkbox" class="checkbox" /> Block.outputShape?</span><br />
-        <span class="label"><input data-for="block/output" type="checkbox" class="checkbox" /> Block.output?</span><br />
-        <span class="label"><input data-for="menu/outputShape" type="checkbox" class="checkbox" /> Menu.outputShape?</span><br />
-        <span class="label"><input data-for="menu/output" type="checkbox" class="checkbox" /> Menu.output?</span><br />
+        <span class="label"><input data-for="block/outputShape" type="checkbox" class="checkbox" /> Block.outputShape</span><br />
+        <span class="label"><input data-for="block/output" type="checkbox" class="checkbox" /> Block.output</span><br />
+        <span class="label"><input data-for="menu/outputShape" type="checkbox" class="checkbox" /> Menu.outputShape</span><br />
+        <span class="label"><input data-for="menu/output" type="checkbox" class="checkbox" /> Menu.output</span><br />
         <br />
-        <span class="label"><input data-for="arg/wxhInlineImage" type="checkbox" class="checkbox" /> Argument.InlineImage.WIDTH&HEIGHT?</span><br />
-        <span class="label"><input data-for="arg/shadowArgs" type="checkbox" class="checkbox" /> Argument.shadow?</span><br />
+        <span class="label"><input data-for="arg/wxhInlineImage" type="checkbox" class="checkbox" /> Argument.InlineImage.WIDTH&HEIGHT</span><br />
+        <span class="label"><input data-for="arg/shadowArgs" type="checkbox" class="checkbox" /> Argument.shadow</span><br />
         <br />
         <span class="label"><input data-for="block/terminalHats" type="checkbox" class="checkbox" /> Allow isTerminal hats</span><br />
         <br />
         <span class="label"><input data-for="add/patchFns" type="checkbox" class="checkbox" /> Add Patch FN's</span><br />
-        <span class="label"><input data-for="add/tooltipAPI" type="checkbox" class="checkbox" /> Add Tooltip API?</span><br />
+        <span class="label"><input data-for="add/tooltipAPI" type="checkbox" class="checkbox" /> Add Tooltip API</span><br />
         <span class="label"><input data-for="add/fieldSupport" type="checkbox" class="checkbox" /> Add Custom Field Support</span><br />
         <br />
         <span class="label"><input data-for="block/duplicateOnDrag" type="checkbox" class="checkbox" /> Duplicate shadow on drag []</span><br />
@@ -63,7 +64,7 @@
           <div class="sub">
             <span>Seperate the opcodes with commas.</span><br />
             <textarea data-for="block/duplicateOnDrag/blocks"></textarea><br />
-            <span class="label"><input data-for="block/duplicateOnDrag/fullOpcodes" type="checkbox" class="checkbox" /> Full opcodes?</span>
+            <span class="label"><input data-for="block/duplicateOnDrag/fullOpcodes" type="checkbox" class="checkbox" /> Full opcodes</span>
           </div>
           <br />
         </div>
@@ -73,7 +74,7 @@
     <div id="footer">
       <hr />
       <div id="legal-stuff">
-        <x-dropdown-span data-dropdown="legalStuff/jargin">Legal Stuff.</x-dropdown-span>
+        <x-dropdown-span data-dropdown="legalStuff/jargin">Legal Stuff</x-dropdown-span>
         <p class="liability-notice sub" data-dropdown="legalStuff/jargin">
           "Patch Generator" is not affiliated with TurboWarp, Scratch, the Scratch Team, or the Scratch Foundation.<br />
           <br />
