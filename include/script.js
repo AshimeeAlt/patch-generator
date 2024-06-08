@@ -303,16 +303,16 @@
     // Beautifying
     if (beautify) {
       output.value = '// Beautifying... //';
-      if (!document.querySelector('script[data-jsBeautify]')) {
+      if (!document.querySelector('script[data-beautifyscript]')) {
         // Leak js_beautify
         $js_beautify = await (new Promise((resolve) => {
           const jsBeautify = document.createElement('script');
-          jsBeautify.dataset.jsBeautify = true;
+          jsBeautify.dataset['beautifyscript'] = true;
           jsBeautify.onload = function() {
             resolve(window.js_beautify);
           };
           jsBeautify.onerror = function() {
-            alert('Failed to load beutifier.');
+            alert('Failed to load beautifier.');
             resolve(false);
           };
           document.body.appendChild(jsBeautify);
