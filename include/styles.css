@@ -219,6 +219,9 @@ x-dropdown-span[data-open="open"] svg {
 
 /* DOCS PAGE */
 
+.docs-link {
+  opacity: 0.8;
+}
 x-docs {
   display: grid;
   background: black;
