@@ -222,11 +222,7 @@ x-dropdown-span[data-open="open"] svg {
 .docs-link {
   opacity: 0.8;
 }
-x-docs {
-  display: grid;
-  background: black;
-}
-html.docs, html.docs>body {
+html.docs, html.docs>body, x-docs {
   background: black;
 }
 html.docs code {
@@ -237,7 +233,7 @@ html.docs code {
 .docs-sect {
   margin-top: 1em;
   display: block;
-  border-top: solid var(--tw-red-1) 5px;
+  border-top: solid var(--tw-red-1) 6px;
   border-radius: 4px;
   width: 100%;
   min-height: 8vh;
@@ -247,9 +243,15 @@ html.docs code {
   padding-top: 5px;
   padding-left: 5px;
 }
+.docs-sect[data-border2] {
+  border-top: solid rgb(76, 151, 255) 6px;
+}
 .docs-sect span[for="header"] {
   font-size: 14px;
   font-weight: bold;
+}
+.docs-content-sect {
+  padding-bottom: 5px;
 }
 .docs-content-sect img {
   max-width: 30%;

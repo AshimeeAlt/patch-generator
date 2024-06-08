@@ -29,94 +29,131 @@
     </div>
     <!-- THE DOCS!!! -->
     <x-docs>
-      <!-- The id is just the corosponding data-for but using >'s instead of /'s -->
       <div id="block>inline" class="docs-sect">
-        <span for="header">BlockType.INLINE</span><br />
-        <div class="docs-content-sect">
-          <p>This adds the INLINE block type (<code>Scratch.BlockType.INLINE</code>).</p>
-          <img src="./imgs/inline_block_example.png" alt="A picture of an inline block" loading="lazy" />
-        </div>
-      </div>
-      <div id="add>blockShape" class="docs-sect">
-        <span for="header">Scratch.BlockShape</span><br />
-        <div class="docs-content-sect">
-          <p>Adds a <code>BlockShape</code> constant to the Scratch object to replicate penguinmods <code>Scratch.BlockShape</code>.</p>
-        </div>
-      </div>
-      <div id="block>outputShape" class="docs-sect">
-        <span for="header">Block.outputShape</span><br />
-        <div class="docs-content-sect">
-          <p>Allow setting the shape of the block using the <code>outputShape</code> option.</p>
-        </div>
-      </div>
-      <div id="block>output" class="docs-sect">
-        <span for="header">Block.output</span><br />
-        <div class="docs-content-sect">
-          <p>Change what kind of return value is expected using the <code>output</code> option.</p>
-        </div>
-      </div>
-      <div id="block>tooltips" class="docs-sect">
-        <span for="header">Block.tooltip</span><br />
-        <div class="docs-content-sect">
-          <p>Add a <code>tooltip</code> option for blocks to add their own custom tooltips.</p>
-          <img src="./imgs/tooltip_example.png" alt="A picture of an block with a tooltip" loading="lazy" />
-        </div>
-      </div>
-      <div id="menu>outputShape" class="docs-sect">
-        <span for="header">Menu.outputShape</span><br />
-        <div class="docs-content-sect">
-          <p>Allow setting the shape of the menu using the <code>outputShape</code> shape.</p>
-        </div>
-      </div>
-      <div id="menu>output" class="docs-sect">
-        <span for="header">Menu.output</span><br />
-        <div class="docs-content-sect">
-          <p>Only accept blocks with the same <code>output</code> value as the menus <code>output</code> option.</p>
-        </div>
-      </div>
-      <div id="arg>wxhInlineImage" class="docs-sect">
-        <span for="header">Argument.InlineImage.WIDTH&HEIGHT</span><br />
-        <div class="docs-content-sect">
-          <p>Adds <code>width</code> and <code>height</code> options to inline image arguments. (<code>ArgumentType.IMAGE</code>)</code></p>
-        </div>
-      </div>
-      <div id="arg>shadowArgs" class="docs-sect">
-        <span for="header">Argument.shadow</span><br />
-        <div class="docs-content-sect">
-          <p>This is currently being worked on, come back later!</p>
-        </div>
-      </div>
-      <div id="block>terminalHats" class="docs-sect">
-        <span for="header">Allow isTerminal hats</span><br />
-        <div class="docs-content-sect">
-          <p>This patch allows you to set the <code>isTerminal</code> boolean on a hat block.</p>
-        </div>
-      </div>
-      <div id="add>patchFns" class="docs-sect">
-        <span for="header">Add patch fn's</span><br />
-        <div class="docs-content-sect">
-          <p>This is currently being worked on, come back later!</p>
-        </div>
-      </div>
-      <div id="add>fieldSupport" class="docs-sect">
-        <span for="header">Add custom field support</span><br />
-        <div class="docs-content-sect">
-          <p>Setup all the necassary patches for custom fields. (more of a utility)</p>
-        </div>
-      </div>
-      <div id="block>duplicateOnDrag" class="docs-sect">
-        <span for="header">Duplicate shadow on drag</span><br />
+        <span for="header">How to use</span><br />
         <div class="docs-content-sect">
           <p>
-            This will duplicate all shadowed-blocks that match the opcodes you specify.<br />
-            (this replicates what the arguments in custom block definitions do!)
+            To use your generated patch follow these setps<br />
+            <ol>
+              <li>Your extension needs to be ran unsandboxed.</li>
+              <li>Paste the patch as soon as possible after the <code>Scratch.extensions.unsandboxed</code> check.</li>
+              <li>Your done :yawn:</li>
+            </ol>
           </p>
-          <p>
-            Full opcodes lets you put any block type (like <code>motion_direction</code>), when this is off just put the opcode for the block in your extension.
-            <br />For example lets say we have a block (opcode is <code>coolBlock</code>) we would just add <code>coolBlock</code> to the opcodes list.
-          </p>
+          <img src="./imgs/where_to_place_patch_code.png" alt="Snippet of code to show where to place the patch code" loading="lazy" />
+        </div>
+      </div>
+      <br />
+      <x-dropdown-span data-dropdown="types">Patchs</x-dropdown-span>
+      <div data-dropdown="types" class="sub">
+        <!-- The id is just the corosponding data-for but using >'s instead of /'s -->
+        <div id="block>inline" class="docs-sect">
+          <span for="header">BlockType.INLINE</span><br />
+          <div class="docs-content-sect">
+            <p>This adds the INLINE block type (<code>Scratch.BlockType.INLINE</code>).</p>
+            <img src="./imgs/inline_block_example.png" alt="A picture of an inline block" loading="lazy" />
+          </div>
+        </div>
+        <div id="add>blockShape" class="docs-sect">
+          <span for="header">Scratch.BlockShape</span><br />
+          <div class="docs-content-sect">
+            <p>Adds a <code>BlockShape</code> constant to the Scratch object to replicate penguinmods <code>Scratch.BlockShape</code>.</p>
+          </div>
+        </div>
+        <div id="block>outputShape" class="docs-sect">
+          <span for="header">Block.outputShape</span><br />
+          <div class="docs-content-sect">
+            <p>Allow setting the shape of the block using the <code>outputShape</code> option.</p>
+          </div>
+        </div>
+        <div id="block>output" class="docs-sect">
+          <span for="header">Block.output</span><br />
+          <div class="docs-content-sect">
+            <p>Change what kind of return value is expected using the <code>output</code> option.</p>
+          </div>
+        </div>
+        <div id="block>tooltips" class="docs-sect">
+          <span for="header">Block.tooltip</span><br />
+          <div class="docs-content-sect">
+            <p>Add a <code>tooltip</code> option for blocks to add their own custom tooltips.</p>
+            <img src="./imgs/tooltip_example.png" alt="A picture of an block with a tooltip" loading="lazy" />
+          </div>
+        </div>
+        <div id="menu>outputShape" class="docs-sect">
+          <span for="header">Menu.outputShape</span><br />
+          <div class="docs-content-sect">
+            <p>Allow setting the shape of the menu using the <code>outputShape</code> shape.</p>
+          </div>
+        </div>
+        <div id="menu>output" class="docs-sect">
+          <span for="header">Menu.output</span><br />
+          <div class="docs-content-sect">
+            <p>Only accept blocks with the same <code>output</code> value as the menus <code>output</code> option.</p>
+          </div>
+        </div>
+        <div id="arg>wxhInlineImage" class="docs-sect">
+          <span for="header">Argument.InlineImage.WIDTH&HEIGHT</span><br />
+          <div class="docs-content-sect">
+            <p>Adds <code>width</code> and <code>height</code> options to inline image arguments. (<code>ArgumentType.IMAGE</code>)</code></p>
+          </div>
+        </div>
+        <div id="arg>shadowArgs" class="docs-sect">
+          <span for="header">Argument.shadow</span><br />
+          <div class="docs-content-sect">
+            <p>This is currently being worked on, come back later!</p>
+          </div>
+        </div>
+        <div id="block>terminalHats" class="docs-sect">
+          <span for="header">Allow isTerminal hats</span><br />
+          <div class="docs-content-sect">
+            <p>This patch allows you to set the <code>isTerminal</code> boolean on a hat block.</p>
+          </div>
+        </div>
+        <div id="add>patchFns" class="docs-sect">
+          <span for="header">Add patch fn's</span><br />
+          <div class="docs-content-sect">
+            <p>This is currently being worked on, come back later!</p>
+          </div>
+        </div>
+        <div id="add>fieldSupport" class="docs-sect">
+          <span for="header">Add custom field support</span><br />
+          <div class="docs-content-sect">
+            <p>Setup all the necassary patches for custom fields. (more of a utility)</p>
+          </div>
+        </div>
+        <div id="block>duplicateOnDrag" class="docs-sect">
+          <span for="header">Duplicate shadow on drag</span><br />
+          <div class="docs-content-sect">
+            <p>
+              This will duplicate all shadowed-blocks that match the opcodes you specify.<br />
+              (this replicates what the arguments in custom block definitions do!)
+            </p>
+            <p>
+              Full opcodes lets you put any block type (like <code>motion_direction</code>), when this is off just put the opcode for the block in your extension.
+              <br />For example lets say we have a block (opcode is <code>coolBlock</code>) we would just add <code>coolBlock</code> to the opcodes list.
+            </p>
+          </div>
         </div>
       </div>
     </x-docs>
+    <!-- Legal stuff -->
+    <div id="footer">
+      <hr />
+      <div id="legal-stuff">
+        <x-dropdown-span data-dropdown="legalStuff/jargin">Legal Stuff</x-dropdown-span>
+        <p class="liability-notice sub" data-dropdown="legalStuff/jargin">
+          "Patch Generator" is not affiliated with TurboWarp, Scratch, the Scratch Team, or the Scratch Foundation.<br />
+          <br />
+          THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,<br />
+          INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A<br />
+          PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT<br />
+          HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION<br />
+          OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE<br />
+          SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.<br />
+        </p>
+      </div>
+    </div>
+    <!-- Scripts -->
+    <script defer src="../include/dropdowns.js"></script>
   </body>
 </html>
