@@ -363,7 +363,9 @@
           const jsBeautify = document.createElement('script');
           jsBeautify.dataset['beautifyscript'] = true;
           jsBeautify.onload = function() {
-            resolve(window.js_beautify);
+            const beautify = window.js_beautify;
+            delete window.js_beautify;
+            resolve(beautify);
           };
           jsBeautify.onerror = function() {
             alert('Failed to load beautifier.');
@@ -386,7 +388,9 @@
           const jsMinify = document.createElement('script');
           jsMinify.dataset['minifyscript'] = true;
           jsMinify.onload = function() {
-            resolve(window.Terser.minify);
+            const minify = window.Terser.minify;
+            delete window.Terser;
+            resolve(minify);
           };
           jsMinify.onerror = function() {
             alert('Failed to load minifier.');
