@@ -3,7 +3,7 @@
  * @argument {globalThis} global The global scope
  * @returns {undefined}
  * @file
- * @fileoverview All of the code
+ * @fileoverview All of the code for dropdowns
  * @author Ashimee https://github.com/Ashimee/
  * @version 1.0
  * @copyright MIT & LGPLv3 License
