@@ -189,3 +189,26 @@ x-dropdown-span[data-open="open"] svg {
 }
 .bi-arrow-up-short::before { content: "\f145"; }
 /* End borrow */
+
+#to-small-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  color: white;
+  background-color: black;
+  z-index: 2147483647;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+}
+@media screen and (max-width: 550px) {
+  body {
+    overflow: hidden;
+  }
+  #to-small-screen {
+    display: grid;
+  }
+}
