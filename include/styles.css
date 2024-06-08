@@ -243,6 +243,13 @@ html.docs code {
   padding-top: 5px;
   padding-left: 5px;
 }
+.docs-sect::before {
+  content: '';
+  margin-left: -1px;
+}
+.bump .docs-sect {
+  margin-left: 15px;
+}
 .docs-sect[data-border2] {
   border-top: solid rgb(76, 151, 255) 6px;
 }
