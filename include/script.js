@@ -212,6 +212,13 @@
    */
   const sel = (for_) => document.querySelector(`*[data-for="${for_}"]`);
 
+  /**!
+   * Find the corosponding dropdown for the x-dropdown
+   * @argument {String} dropdown The dropdown id
+   * @returns {Element} The dropdown content element
+   */
+  const selDropdown = (dropdown) => document.querySelector(`*[data-dropdown="${dropdown}"]:not(x-dropdown-span)`);
+
   // This is for showing and hiding the menu for block/duplicateOnDrag
   sel('block/duplicateOnDrag').onchange = function() {
     // Check if we are enabled and if we are show otherwise hide
@@ -219,12 +226,15 @@
   };
   // This is for the fancy double auto shit
   sel('block/inline').onchange = function() {
+    // Get the outputShape checkbox and its parent to toggle the disabled attribute
     const outputShape = sel('block/outputShape');
     outputShape.parentElement.classList.toggle('disabled-label');
+    // If its disabled then click it if its not checked and actually disabled it
     if (outputShape.parentElement.classList.contains('disabled-label')) {
       if (!outputShape.checked) outputShape.click();
       outputShape.disabled = true;
     } else {
+      // Otherwise enable it and uncheck it
       outputShape.disabled = false;
       setTimeout(() => outputShape.click(), 5);
     }
@@ -316,9 +326,26 @@
   document.body.addEventListener('click', (ev) => {
     const target = ev.target;
     if (target.nodeName === 'SPAN' && target.classList.contains('label')) {
+      // Click the checkbox as we are apart of the checkbox
       const checkbox = target.querySelector('input[type="checkbox"]');
       checkbox.click();
+    } else if (target.nodeName === 'X-DROPDOWN-SPAN') {
+      // Make sure "data-dropdown" is defined
+      if (target.dataset?.dropdown) {
+        // Get our dropdown content node
+        const dropdownContent = selDropdown(target.dataset.dropdown);
+        // Open / Close it
+        const open = target.dataset.open === 'open' ? 'closed' : 'open'
+        target.dataset.open = open;
+        dropdownContent.dataset.open = open;
+        // Redraw
+        dropdownContent.offsetHeight;
+      }
     }
+  });
+  document.querySelectorAll('x-dropdown-span').forEach(span => {
+    span.dataset.open = span.dataset?.open ?? 'closed';
+    selDropdown(span.dataset.dropdown).dataset.open = span.dataset.open;
   });
 
   // Share some stuff

@@ -111,7 +111,7 @@ input[data-for="extId"] {
   background-size: 100%;
   outline: none;
 }
-.checkbox:hover, .checkbox:active, .checkbox:checked {
+.checkbox:hover:not(:disabled), .checkbox:active:not(:disabled), .checkbox:checked {
   border-color: var(--tw-red-1);
 }
 .checkbox:checked {
@@ -138,10 +138,21 @@ textarea[data-for="gen/output"] {
 .generator-button:active {
   background: var(--tw-red-1_5);
 }
+#output_container {
+  position: absolute;
+  left: 50%;
+}
 
-span[data-for="legalStuff/dropdownButton"] {
+x-dropdown-span {
   cursor: pointer;
 }
+*[data-dropdown]:not(x-dropdown-span)[data-open="open"] {
+  display: inherit;
+}
+*[data-dropdown]:not(x-dropdown-span)[data-open="closed"] {
+  display: none;
+}
+
 .credits {
   position: fixed;
   width: fit-content;
