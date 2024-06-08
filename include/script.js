@@ -270,16 +270,58 @@
     return res;
   }
 
+  let $js_beautify;
+  const beautify_options = {
+    indent_size: 2,
+    indent_char: ' ',
+    indent_with_tabs: false,
+    editorconfig: true,
+    eol: '\n',
+    end_with_newline: true,
+    indent_level: 0,
+    preserve_newlines: true,
+    max_preserve_newlines: 2,
+    jslint_happy: true,
+    space_after_anon_function: true,
+    space_after_named_function: true,
+    wrap_line_length: 0,
+    indent_empty_lines: false,
+  };
+
   /**!
    * Generates the JS based on user input when the generate button is pressed
    * @returns {undefined}
    */
   async function gen() {
     /* Setup */
-    const minify = sel('gen/minify').checked, output = sel('gen/output');
+    const output = sel('gen/output');
+    const minify = sel('gen/minify').checked,
+          beautify = sel('gen/beautify').checked;
     output.value = '// GENERATING... //';
-    let js = generatePatchs(makeOptions());
+    let js = `/* eslint-disable */${generatePatchs(makeOptions())}/* eslint-enable */`;
     /* Main */
+    // Beautifying
+    if (beautify) {
+      output.value = '// Beautifying... //';
+      if (!document.querySelector('script[data-jsBeautify]')) {
+        // Leak js_beautify
+        $js_beautify = await (new Promise((resolve) => {
+          const jsBeautify = document.createElement('script');
+          jsBeautify.dataset.jsBeautify = true;
+          jsBeautify.onload = function() {
+            resolve(window.js_beautify);
+          };
+          jsBeautify.onerror = function() {
+            alert('Failed to load beutifier.');
+            resolve(false);
+          };
+          document.body.appendChild(jsBeautify);
+          jsBeautify.src = './include/beautify(1.15.1).min.js';
+        }));
+      }
+      js = $js_beautify(js, beautify_options);
+    }
+    // Minifying
     // There is a 5MB limit so lets just say 4MB patches at MAX
     if (minify && js.length <= 4e6) {
       // Tell the user we are minifying then try to minify
@@ -305,7 +347,7 @@
             alert('Failed to minify, outputting unminified JS.\n\nCode: -50');
           } else {
             // Set the JS to the new minified JS
-            js = text;
+            js = `// prettier-ignore\n/* eslint-disable */${text}/* eslint-enable*/`;
           }
         }
       } catch {
@@ -373,6 +415,9 @@
     },
     sel: function(for_) {
       return sel(for_);
-    }
+    },
+    get js_beautify() {
+      return $js_beautify;
+    },
   }
 }).bind({}, globalThis)();
