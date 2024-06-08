@@ -190,7 +190,7 @@
       patch.exports[1] += 'ttpExt:`${PATCHES_ID}_tooltip_extension`,';
       patch.blockly[1] += 'Blockly.Extensions.register(exports.ttpExt,function(){const thisBlock=this;this.setTooltip(()=>{const customTtp=$ttps?.[thisBlock.type];return(typeof customTtp==="function"?customTtp.call(this):customTtp)});});';
       // Add the JS for the VM after res
-      patch.cbfsb[2] += 'if(hasOwn(blockInfo,"tooltip"))$ttps[res.json.type]=blockInfo.tooltip;';
+      patch.cbfsb[2] += 'if(hasOwn(blockInfo,"tooltip")){$ttps[res.json.type]=blockInfo.tooltip;res.json.extensions.push(exports.ttpExt);};';
     }
     /* Finalizing */
     /**!
