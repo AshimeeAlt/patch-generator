@@ -74,7 +74,7 @@
        * All the Blockly patches, Array order: [active, ...js]
        * @type {Array<boolean|string>}
        */
-      blockly: [false, 'Scratch.gui.getBlockly().then(ScratchBlocks=>{const Blockly=ScratchBlocks;','});'],
+      blockly: [false, 'if(Scratch.gui)Scratch.gui.getBlockly().then(Blockly=>{const ScratchBlocks=Blockly;','});'],
     };
     /**!
      * All the dependancies
@@ -170,6 +170,21 @@
         patch.blockly[0] = true;
         patch.blockly[1] += `const $dbod=[${opcodes}],sbuisar=Blockly.scratchBlocksUtils.isShadowArgumentReporter;Blockly.scratchBlocksUtils.isShadowArgumentReporter=function(block){return(sbuisar.call(this,block)||block.isShadow()&&$dbod.includes(block.type))};`;
       }
+    }
+    if (opts.tooltips) {
+      // We need to patch some blockly and vm functions
+      // so enable cbfsb and blockly same with exports and laod
+      patch.cbfsb[0] = true;
+      patch.blockly[0] = true;
+      patch.exports[0] = true;
+      depenancies.load[0] = true;
+      depenancies.hasOwn[0] = true;
+      // Add the JS for blockly and exports
+      depenancies.load[1] += 'const $ttps={};';
+      patch.exports[1] += 'ttpExt:`${PATCHES_ID}_tooltip_extension`,';
+      patch.blockly[1] += 'Blockly.Extensions.register(exports.ttpExt,function(){const thisBlock=this;this.setTooltip(()=>{const customTtp=$ttps?.[thisBlock.type];return(typeof customTtp==="function"?customTtp.call(this):customTtp)});});';
+      // Add the JS for the VM after res
+      patch.cbfsb[2] += 'if(hasOwn(blockInfo,"tooltip"))$ttps[res.json.type]=blockInfo.tooltip;';
     }
     /* Finalizing */
     /**!
@@ -274,6 +289,7 @@
       customInlineImageSize: sel('arg/wxhInlineImage').checked,
       addBlockShape: sel('add/blockShape').checked,
       duplicatingBlocks: { bool: sel('block/duplicateOnDrag').checked, opcodes: sel('block/duplicateOnDrag/blocks').value, fullOpcodes: sel('block/duplicateOnDrag/fullOpcodes').checked },
+      tooltips: sel('block/tooltips').checked,
     };
     return res;
   }
