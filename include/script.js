@@ -270,7 +270,19 @@
     return res;
   }
 
+  /**!
+   * JavaScript Beautifier
+   * @type {Function}
+   * @argument {String} JS The JavaScript to beautify
+   * @argument {Object} options Beautifier options
+   * @returns {String} The beautified JavaScript
+   * (Warning: this is lazilly loaded!)
+   */
   let $js_beautify;
+  /**!
+   * The config for the beautifier
+   * @type {Object}
+   */
   const beautify_options = {
     indent_size: 2,
     indent_char: ' ',
